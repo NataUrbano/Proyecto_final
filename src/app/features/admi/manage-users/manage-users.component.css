@@ -1,0 +1,86 @@
+/* features/admin/pages/manage-users/manage-users.component.css */
+.manage-users {
+    min-height: 100vh;
+    background-color: #F4F1EA;
+  }
+  
+  .main-content {
+    padding-top: 76px;
+    transition: margin-left 0.3s ease;
+  }
+  
+  .main-content.sidebar-open {
+    margin-left: 280px;
+  }
+  
+  .page-header {
+    padding: 2rem 0;
+  }
+  
+  .page-header h1 {
+    margin-bottom: 1.5rem;
+  }
+  
+  .filters-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .search-box {
+    flex: 1;
+  }
+  
+  .form-select {
+    width: 200px;
+  }
+  
+  .table-responsive {
+    background: white;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .table th {
+    padding: 1rem;
+    background: #f8f9fa;
+  }
+  
+  .table td {
+    padding: 1rem;
+    vertical-align: middle;
+  }
+  
+  .badge {
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+  }
+  
+  .btn-sm {
+    padding: 0.25rem 0.5rem;
+  }
+  
+  @media (max-width: 992px) {
+    .main-content.sidebar-open {
+      margin-left: 0;
+    }
+    
+    .filters-row {
+      flex-direction: column;
+    }
+  
+    .form-select {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .page-header {
+      padding: 1rem 0;
+    }
+    
+    .table-responsive {
+      padding: 0.5rem;
+    }
+  }

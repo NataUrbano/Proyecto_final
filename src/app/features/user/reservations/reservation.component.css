@@ -1,0 +1,174 @@
+/* book-reservation.component.css */
+.reservation-container {
+    min-height: 100vh;
+    background-color: #F4F1EA;
+    padding: 2rem 1rem;
+  }
+  
+  .reservation-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .book-preview {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #E6E6FA 0%, #C5D5BA 100%);
+  }
+  
+  .book-cover {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1.5rem;
+  }
+  
+  .book-preview h1 {
+    color: #333;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  .lead {
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .reservation-form {
+    padding: 2rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-control:focus {
+    border-color: #6B87A5;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(107, 135, 165, 0.2);
+  }
+  
+  .form-text {
+    font-size: 0.875rem;
+    color: #666;
+    margin-top: 0.25rem;
+  }
+  
+  .form-check {
+    margin-top: 1rem;
+  }
+  
+  .form-check-input {
+    margin-right: 0.5rem;
+  }
+  
+  .text-danger {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+  }
+  
+  .alert {
+    margin: 1.5rem 0;
+    border-radius: 0.5rem;
+  }
+  
+  .alert-heading {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .btn-primary {
+    background-color: #6B87A5;
+    border: none;
+    padding: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-primary:hover:not(:disabled) {
+    background-color: #5a7390;
+  }
+  
+  .btn-primary:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Modal Styles */
+  :host ::ng-deep .modal-content {
+    border-radius: 1rem;
+    border: none;
+  }
+  
+  :host ::ng-deep .modal-header {
+    border-bottom: none;
+    padding: 1.5rem 1.5rem 1rem;
+  }
+  
+  :host ::ng-deep .modal-body {
+    padding: 1rem 1.5rem;
+  }
+  
+  :host ::ng-deep .modal-footer {
+    border-top: none;
+    padding: 1rem 1.5rem 1.5rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .reservation-content {
+      border-radius: 0;
+    }
+  
+    .book-preview {
+      padding: 1.5rem;
+    }
+  
+    .book-cover {
+      width: 150px;
+    }
+  
+    .book-preview h1 {
+      font-size: 1.5rem;
+    }
+  
+    .reservation-form {
+      padding: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .reservation-container {
+      padding: 0;
+    }
+  
+    .book-cover {
+      width: 120px;
+    }
+  
+    .book-preview h1 {
+      font-size: 1.25rem;
+    }
+  }

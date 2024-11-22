@@ -1,0 +1,195 @@
+{
+  "auth": {
+    "login": {
+      "title": "User",
+      "username": "Username",
+      "username_placeholder": "Enter your username",
+      "password": "Password",
+      "password_placeholder": "Enter your password",
+      "submit": "Log In",
+      "register_link": "Register"
+    },
+    "register": {
+      "title": "Create an account",
+      "subtitle": "It's quick and easy.",
+      "firstName": "First Name",
+      "firstName_placeholder": "Enter your first name",
+      "lastName": "Last Name",
+      "lastName_placeholder": "Enter your last name",
+      "email": "Email",
+      "email_placeholder": "Enter your email",
+      "password": "New Password",
+      "password_placeholder": "Enter your password",
+      "submit": "Register",
+      "login_text": "Already have an account?",
+      "login_link": "Log In"
+    }
+  },
+  "header": {
+    "search": "Search books...",
+    "search_button": "Search"
+  },
+  "sidebar": {
+    "user": {
+      "profile": "Profile",
+      "home": "Home Page",
+      "search": "Specific Search",
+      "logout": "Log Out"
+    },
+    "admin": {
+      "profile": "Profile",
+      "books": "Book Reservations",
+      "catalog": "Books",
+      "users": "Users",
+      "logout": "Log Out"
+    }
+  },
+  "footer": {
+    "useful_links": "Useful Links",
+    "about_us": "About Us",
+    "login": "Log In",
+    "register": "Register",
+    "social": "Social Media",
+    "contact": "Contact Us",
+    "address": "Address: Enciso Street 123, City, Country",
+    "phone": "Phone: +123 456 7890",
+    "email": "Email: contact@epilogo.com",
+    "copyright": "Copyright © 2024 Epílogo. All rights reserved."
+  },
+  "home": {
+    "hero": {
+      "title": "Epílogo",
+      "subtitle": "The digital library for everyone",
+      "description": "Discover a unique reservation experience on Epílogo, the virtual platform where you can explore and reserve your favorite books quickly and easily."
+    },
+    "buttons": {
+      "login": "Log In",
+      "register": "Register"
+    },
+    "features": {
+      "title": "Why choose Epílogo?",
+      "search": {
+        "title": "Smart Search",
+        "description": "Find your favorite books with our advanced search system"
+      },
+      "reserve": {
+        "title": "Easy Reservations",
+        "description": "Reserve your books in just a few clicks and pick them up whenever you want"
+      },
+      "track": {
+        "title": "Real-Time Tracking",
+        "description": "Stay informed about the status of your reservations at all times"
+      }
+    }
+  },
+  "about": {
+    "header": {
+      "login": "Log In"
+    },
+    "hero": {
+      "title": "About Us",
+      "subtitle": "Transforming the way we access literature"
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "At Epílogo, we are dedicated to making literature accessible to everyone. We believe in the power of books to change lives and aim to make them easier to access through our digital platform.",
+      "join_button": "Join Now",
+      "login_button": "Log In"
+    },
+    "values": {
+      "title": "Our Values",
+      "accessibility": {
+        "title": "Accessibility",
+        "description": "We make books accessible to everyone, anytime, anywhere"
+      },
+      "community": {
+        "title": "Community",
+        "description": "We build a passionate community around reading and knowledge"
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "We use technology to enhance the book lending experience"
+      }
+    },
+    "team": {
+      "title": "Our Team",
+      "roles": {
+        "founder": "Founder & CEO",
+        "tech": "Technology Director",
+        "librarian": "Chief Librarian"
+      }
+    }
+  },
+  "dashboard": {
+    "greeting": "Hello",
+    "question": "What book are you looking for today?",
+    "categories": "Categories",
+    "featured_books": "Featured Books",
+    "see_all": "See All",
+    "search": {
+      "placeholder": "Search books...",
+      "button": "Search"
+    }
+  },
+  "categories": {
+    "historical": "Historical Novel",
+    "description": "Explore fascinating stories set in different eras",
+    "sci_fi": "Science Fiction",
+    "thriller": "Thriller",
+    "poetry": "Poetry",
+    "historical_fiction": "Historical Fiction",
+    "world_literature": "World Literature",
+    "book_count": "{{count}} books"
+  },
+  "catalog": {
+    "total_books": "{{count}} books available",
+    "no_books": "No books available in this category",
+    "filter": {
+      "title": "Filters",
+      "availability": "Availability",
+      "available": "Available",
+      "all": "All",
+      "sort": "Sort By",
+      "newest": "Newest",
+      "title": "Title",
+      "author": "Author"
+    }
+  },
+  "book": {
+    "genre": "Genre",
+    "copies": "Number of Copies",
+    "description": "Description",
+    "reserve": "Reserve",
+    "availability": {
+      "available": "AVAILABLE",
+      "low_stock": "FEW COPIES LEFT",
+      "out_of_stock": "NO COPIES AVAILABLE"
+    },
+    "messages": {
+      "reserve_success": "Book reserved successfully",
+      "reserve_error": "Error reserving the book",
+      "not_available": "This book is not currently available"
+    }
+  },
+  "pagination": {
+    "previous": "Previous",
+    "next": "Next",
+    "of": "of"
+  },
+  "search": {
+    "results_for": "Results for '{{query}}'",
+    "no_results": "No results found",
+    "try_different": "Try different keywords or adjust the filters",
+    "filters": {
+      "all_genres": "All Genres",
+      "fiction": "Fiction",
+      "all_availability": "All Availability",
+      "available": "Available"
+    },
+    "sort": {
+      "relevance": "Relevance",
+      "title": "Title",
+      "author": "Author"
+    }
+  }
+}

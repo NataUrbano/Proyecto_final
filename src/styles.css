@@ -1,0 +1,5 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+.dashboard-content {
+    padding: 2rem;
+}

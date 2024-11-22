@@ -1,0 +1,81 @@
+<!-- features/user/pages/dashboard/dashboard.component.html -->
+<div class="dashboard-layout">
+  <!-- Header con Toggle del Sidebar -->
+  <nav class="navbar fixed-top">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" (click)="toggleSidebar()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+        <img src="assets/images/book-icon.svg" alt="Epilogo" class="navbar-logo">
+        Epilogo
+      </a>
+      <div class="search-box">
+        <input 
+          type="search" 
+          class="form-control" 
+          [placeholder]="'dashboard.search.placeholder' | translate"
+          [(ngModel)]="searchQuery"
+          (keyup.enter)="onSearch()"
+        >
+        <button class="btn btn-search" (click)="onSearch()">
+          <i class="bi bi-search"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sidebar -->
+  <app-user-sidebar [isOpen]="isSidebarOpen" (closeEvent)="toggleSidebar()"></app-user-sidebar>
+
+  <!-- Main Content -->
+  <main class="main-content" [class.sidebar-open]="isSidebarOpen">
+    <!-- Welcome Section -->
+    <section class="welcome-section">
+      <div class="container">
+        <div class="welcome-content">
+          <h1>{{ 'dashboard.greeting' | translate }}</h1>
+          <h2>{{ userName }}</h2>
+          <p>{{ 'dashboard.question' | translate }}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories Grid -->
+    <section class="categories-section">
+      <div class="container">
+        <h2 class="section-title">{{ 'dashboard.categories' | translate }}</h2>
+        
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+          <div class="col" *ngFor="let category of categories">
+            <div class="category-card" (click)="navigateToCategory(category)">
+              <div class="category-image">
+                <img [src]="category.image" [alt]="category.name">
+                <div class="category-overlay">
+                  <h3>{{ category.name }}</h3>
+                  <p>{{ 'categories.book_count' | translate:{count: category.bookCount} }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Books Section -->
+    <section class="recent-books-section" *ngIf="recentBooks.length > 0">
+      <div class="container">
+        <h2 class="section-title">{{ 'dashboard.recent_books' | translate }}</h2>
+        
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+          <div class="col" *ngFor="let book of recentBooks">
+            <app-book-card 
+              [book]="book"
+              (onReserve)="reserveBook($event)">
+            </app-book-card>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>

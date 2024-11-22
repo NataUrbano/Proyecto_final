@@ -1,0 +1,109 @@
+<!-- features/admin/dashboard/admin-dashboard.component.html -->
+<div class="admin-dashboard">
+  <!-- Header -->
+  <app-admin-header 
+    [showSearch]="false"
+    (sidebarToggle)="toggleSidebar()">
+  </app-admin-header>
+
+  <!-- Sidebar -->
+  <app-admin-sidebar
+    [isOpen]="isSidebarOpen"
+    (closeEvent)="toggleSidebar()">
+  </app-admin-sidebar>
+
+  <!-- Main Content -->
+  <main class="main-content" [class.sidebar-open]="isSidebarOpen">
+    <div class="container-fluid">
+      <div class="dashboard-header">
+        <h1>{{ 'admin.dashboard.title' | translate }}</h1>
+        
+        <!-- Filters -->
+        <div class="filters-row">
+          <div class="search-box">
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="searchTerm"
+              [placeholder]="'admin.dashboard.search' | translate"
+            >
+          </div>
+          
+          <select class="form-select" [(ngModel)]="statusFilter">
+            <option value="all">{{ 'admin.dashboard.all_status' | translate }}</option>
+            <option value="pending">{{ 'admin.dashboard.status.pending' | translate }}</option>
+            <option value="active">{{ 'admin.dashboard.status.active' | translate }}</option>
+            <option value="completed">{{ 'admin.dashboard.status.completed' | translate }}</option>
+            <option value="canceled">{{ 'admin.dashboard.status.canceled' | translate }}</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Reservations Table -->
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>{{ 'admin.dashboard.user' | translate }}</th>
+              <th>{{ 'admin.dashboard.book' | translate }}</th>
+              <th>{{ 'admin.dashboard.reservation_date' | translate }}</th>
+              <th>{{ 'admin.dashboard.expected_return' | translate }}</th>
+              <th>{{ 'admin.dashboard.actual_return' | translate }}</th>
+              <th>{{ 'admin.dashboard.status' | translate }}</th>
+              <th>{{ 'admin.dashboard.actions' | translate }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let res of filteredReservations">
+              <td>{{ res.id }}</td>
+              <td>{{ res.userName }}</td>
+              <td>{{ res.bookTitle }}</td>
+              <td>{{ res.reservationDate | date }}</td>
+              <td>{{ res.expectedReturnDate | date }}</td>
+              <td>{{ res.actualReturnDate | date || '-' }}</td>
+              <td>
+                <span class="badge" [ngClass]="getStatusClass(res.status)">
+                  {{ 'admin.dashboard.status.' + res.status | translate }}
+                </span>
+              </td>
+              <td>
+                <div class="btn-group">
+                  <button 
+                    class="btn btn-sm btn-outline-primary" 
+                    [matTooltip]="'admin.dashboard.edit' | translate"
+                    (click)="editReservation(res.id)"
+                  >
+                    <i class="bi bi-pencil"></i>
+                  </button>
+                  <button 
+                    class="btn btn-sm btn-outline-success"
+                    *ngIf="res.status === 'pending'"
+                    [matTooltip]="'admin.dashboard.activate' | translate"
+                    (click)="updateReservationStatus(res.id, 'active')"
+                  >
+                    <i class="bi bi-check2"></i>
+                  </button>
+                  <button 
+                    class="btn btn-sm btn-outline-danger"
+                    *ngIf="res.status === 'pending'"
+                    [matTooltip]="'admin.dashboard.cancel' | translate"
+                    (click)="updateReservationStatus(res.id, 'canceled')"
+                  >
+                    <i class="bi bi-x"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Empty State -->
+      <div *ngIf="!isLoading && filteredReservations.length === 0" class="empty-state">
+        <i class="bi bi-inbox"></i>
+        <p>{{ 'admin.dashboard.no_reservations' | translate }}</p>
+      </div>
+    </div>
+  </main>
+</div>

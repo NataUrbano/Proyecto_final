@@ -1,0 +1,164 @@
+/* profile.component.css */
+:root {
+    --epilogo-green: #C5D5BA;
+    --epilogo-light: #E6E9DA;
+    --epilogo-primary: #6B87A5;
+    --epilogo-secondary: #FCAF3B;
+  }
+  
+  /* Navbar Styles */
+  .bg-epilogo {
+    background-color: var(--epilogo-green);
+  }
+  
+  .navbar-brand {
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .nav-link {
+    color: #333;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: var(--epilogo-primary);
+  }
+  
+  /* Profile Container */
+  .profile-container {
+    background-color: #f8f9fa;
+    min-height: calc(100vh - 56px);
+  }
+  
+  /* Welcome Section */
+  .welcome-section {
+    text-align: center;
+    padding: 2rem 0;
+  }
+  
+  .welcome-section h1 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .welcome-section .lead {
+    color: #666;
+  }
+  
+  /* Card Styles */
+  .card {
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  
+  .card-header {
+    padding: 1rem;
+    border-bottom: none;
+  }
+  
+  .bg-epilogo-light {
+    background-color: var(--epilogo-light);
+  }
+  
+  /* Form Styles */
+  .form-control {
+    border-radius: 0.5rem;
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+  }
+  
+  .form-control:disabled {
+    background-color: #f8f9fa;
+    cursor: not-allowed;
+  }
+  
+  .form-select {
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+  }
+  
+  /* Button Styles */
+  .btn-edit {
+    background-color: var(--epilogo-primary);
+    color: white;
+  }
+  
+  .btn-save {
+    background-color: var(--epilogo-secondary);
+    color: white;
+  }
+  
+  /* Reservation Table */
+  .table {
+    margin-bottom: 0;
+  }
+  
+  .book-thumbnail {
+    width: 40px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  
+  .status-badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  
+  .text-warning { color: #ffc107 !important; }
+  .text-primary { color: var(--epilogo-primary) !important; }
+  .text-success { color: #28a745 !important; }
+  .text-danger { color: #dc3545 !important; }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .card {
+      margin-bottom: 1rem;
+    }
+  
+    .table-responsive {
+      margin: 0 -1rem;
+    }
+  
+    .welcome-section h1 {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .btn {
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+  
+    .card-header {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  
+    .table th, 
+    .table td {
+      white-space: nowrap;
+    }
+  }
+  
+  /* Animation */
+  .btn {
+    transition: all 0.3s ease;
+  }
+  
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+  
+  .form-control:focus,
+  .form-select:focus {
+    border-color: var(--epilogo-primary);
+    box-shadow: 0 0 0 0.2rem rgba(107, 135, 165, 0.25);
+  }

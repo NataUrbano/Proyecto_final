@@ -1,0 +1,181 @@
+/* features/books/pages/book-detail/book-detail.component.css */
+.book-detail-page {
+  min-height: 100vh;
+  background-color: #F4F1EA;
+}
+
+.main-content {
+  padding-top: 76px;
+  transition: margin-left 0.3s ease;
+}
+
+.main-content.sidebar-open {
+  margin-left: 280px;
+}
+
+.book-content {
+  padding: 2rem 0;
+}
+
+/* Book Cover Styles */
+.book-cover-wrapper {
+  position: relative;
+  width: 100%;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.book-cover-wrapper:hover {
+  transform: translateY(-5px);
+}
+
+.book-cover {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Book Info Styles */
+.book-info {
+  padding: 1rem;
+}
+
+.book-title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.book-author {
+  font-size: 1.25rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.book-metadata {
+  margin-bottom: 2rem;
+}
+
+.metadata-item {
+  margin-bottom: 0.5rem;
+}
+
+.label {
+  color: #666;
+  margin-right: 0.5rem;
+}
+
+.value {
+  color: #333;
+  font-weight: 500;
+}
+
+.availability-status {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1rem 0;
+}
+
+/* Reserve Button */
+.btn-reserve {
+  background-color: #6B87A5;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  width: 100%;
+  max-width: 300px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-reserve:not(.disabled):hover {
+  background-color: #5a7390;
+  transform: translateY(-2px);
+}
+
+.btn-reserve:not(.disabled):active {
+  transform: translateY(0);
+}
+
+.btn-reserve.disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Button Animation */
+.btn-reserve::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.btn-reserve:not(.disabled):hover::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* Description Section */
+.book-description {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.book-description h3 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.book-description p {
+  color: #666;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .main-content.sidebar-open {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .book-content {
+    padding: 1rem 0;
+  }
+
+  .book-title {
+    font-size: 1.75rem;
+  }
+
+  .book-author {
+    font-size: 1.1rem;
+  }
+
+  .book-cover-wrapper {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .book-title {
+    font-size: 1.5rem;
+  }
+
+  .btn-reserve {
+    max-width: 100%;
+  }
+}

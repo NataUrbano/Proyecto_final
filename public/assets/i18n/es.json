@@ -1,0 +1,197 @@
+{
+  "auth": {
+    "login": {
+      "title": "Usuario",
+      "username": "Usuario",
+      "username_placeholder": "Ingrese su usuario",
+      "password": "Contraseña",
+      "password_placeholder": "Ingrese su contraseña",
+      "submit": "Iniciar Sesión",
+      "register_link": "Registrarte"
+    },
+    "register": {
+      "title": "Crea una cuenta",
+      "subtitle": "Es rápido y fácil.",
+      "firstName": "Nombre",
+      "firstName_placeholder": "Ingrese su nombre",
+      "lastName": "Apellidos",
+      "lastName_placeholder": "Ingrese sus apellidos",
+      "email": "Correo electrónico",
+      "email_placeholder": "Ingrese su correo electrónico",
+      "password": "Nueva Contraseña",
+      "password_placeholder": "Ingrese su contraseña",
+      "submit": "Registrarte",
+      "login_text": "¿Ya tienes una cuenta?",
+      "login_link": "Iniciar sesión"
+    }
+  },
+  "header": {
+    "search": "Buscar libros...",
+    "search_button": "Buscar"
+  },
+  "sidebar": {
+    "user": {
+      "profile": "Perfil",
+      "home": "Página de Inicio",
+      "search": "Búsqueda específica",
+      "logout": "Cerrar sesión"
+    },
+    "admin": {
+      "profile": "Perfil",
+      "books": "Reserva de libros",
+      "catalog": "Libros",
+      "users": "Usuarios",
+      "logout": "Cerrar sesión"
+    }
+  },
+  "footer": {
+    "useful_links": "Enlaces Útiles",
+    "about_us": "Sobre nosotros",
+    "login": "Iniciar sesión",
+    "register": "Registrarse",
+    "social": "Redes Sociales",
+    "contact": "Contáctanos",
+    "address": "Dirección: Calle Enciso 123, Ciudad, País",
+    "phone": "Teléfono: +123 456 7890",
+    "email": "Correo: contacto@epilogo.com",
+    "copyright": "Copyright © 2024 Epílogo. Todos los derechos reservados."
+  },
+  "home": {
+    "hero": {
+      "title": "Epílogo",
+      "subtitle": "La biblioteca digital para todos",
+      "description": "Descubre una experiencia de reserva única en Epílogo, la plataforma virtual donde puedes explorar y reservar tus libros favoritos de manera sencilla y rápida."
+    },
+    "buttons": {
+      "login": "Iniciar sesión",
+      "register": "Registrarte"
+    },
+    "features": {
+      "title": "¿Por qué elegir Epílogo?",
+      "search": {
+        "title": "Búsqueda Inteligente",
+        "description": "Encuentra tus libros favoritos con nuestro sistema de búsqueda avanzado"
+      },
+      "reserve": {
+        "title": "Reserva Fácil",
+        "description": "Reserva tus libros en pocos clics y recógelos cuando quieras"
+      },
+      "track": {
+        "title": "Seguimiento en Tiempo Real",
+        "description": "Mantente informado sobre el estado de tus reservas en todo momento"
+      }
+    }
+  },
+  "about": {
+    "header": {
+      "login": "Iniciar sesión"
+    },
+    "hero": {
+      "title": "Sobre Nosotros",
+      "subtitle": "Transformando la manera en que accedemos a la literatura"
+    },
+    "mission": {
+      "title": "Nuestra Misión",
+      "description": "En Epílogo, nos dedicamos a hacer que la literatura sea accesible para todos. Creemos en el poder de los libros para transformar vidas y queremos facilitar el acceso a ellos a través de nuestra plataforma digital.",
+      "join_button": "Únete ahora",
+      "login_button": "Iniciar sesión"
+    },
+    "values": {
+      "title": "Nuestros Valores",
+      "accessibility": {
+        "title": "Accesibilidad",
+        "description": "Hacemos que los libros sean accesibles para todos, en cualquier momento y lugar"
+      },
+      "community": {
+        "title": "Comunidad",
+        "description": "Construimos una comunidad apasionada por la lectura y el conocimiento"
+      },
+      "innovation": {
+        "title": "Innovación",
+        "description": "Utilizamos la tecnología para mejorar la experiencia de préstamo de libros"
+      }
+    },
+    "team": {
+      "title": "Nuestro Equipo",
+      "roles": {
+        "founder": "Fundadora & CEO",
+        "tech": "Director de Tecnología",
+        "librarian": "Bibliotecaria Principal"
+      }
+    }
+  },
+  "dashboard": {
+    "greeting": "Hola",
+    "question": "¿Qué libro buscas hoy?",
+    "categories": "Categorías",
+    "featured_books": "Libros Destacados",
+    "see_all": "Ver todos",
+    "search": {
+      "placeholder": "Buscar libros...",
+      "button": "Buscar"
+    }
+  },
+  "categories": {
+    "historical": "Novela Histórica",
+    "description": "Explora historias fascinantes ambientadas en diferentes épocas",
+    "sci_fi": "Ciencia Ficción",
+    "thriller": "Thriller",
+    "poetry": "Poesía",
+    "historical_fiction": "Ficción Histórica",
+    "world_literature": "Literatura Mundial",
+    "book_count": "{{count}} libros"
+  },
+  "catalog": {
+    "total_books": "{{count}} libros disponibles",
+    "no_books": "No hay libros disponibles en esta categoría",
+    "filter": {
+      "title": "Filtros",
+      "availability": "Disponibilidad",
+      "available": "Disponible",
+      "all": "Todos",
+      "sort": "Ordenar por",
+      "newest": "Más recientes",
+      "title": "Título",
+      "author": "Autor"
+    }
+  },
+  "book": {
+    "genre": "Género",
+    "copies": "Número de copias",
+    "description": "Descripción",
+    "reserve": "Reservar",
+    "availability": {
+      "available": "Disponible",
+      "reserved": "Reservado",
+      "borrowed": "Prestado",
+      "low_stock": "Pocas Copias Disponibles",
+      "out_of_stock": "No Hay Copias Disponibles"
+    },
+    "messages": {
+      "reserve_success": "Libro reservado exitosamente",
+      "reserve_error": "Error al reservar el libro",
+      "not_available": "Este libro no está disponible actualmente"
+    }
+  },
+  "pagination": {
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "of": "de"
+  },
+  "search": {
+    "results_for": "Resultados para '{{query}}'",
+    "no_results": "No se encontraron resultados",
+    "try_different": "Intenta con diferentes palabras o revisa los filtros",
+    "filters": {
+      "all_genres": "Todos los géneros",
+      "fiction": "Ficción",
+      "all_availability": "Toda la disponibilidad",
+      "available": "Disponibles"
+    },
+    "sort": {
+      "relevance": "Relevancia",
+      "title": "Título",
+      "author": "Autor"
+    }
+  }
+}

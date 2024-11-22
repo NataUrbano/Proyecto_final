@@ -1,0 +1,128 @@
+/* features/user/pages/catalog/book-catalog.component.css */
+.catalog-page {
+    min-height: 100vh;
+    background-color: #F4F1EA;
+  }
+  
+  .main-content {
+    padding-top: 76px;
+    transition: margin-left 0.3s ease;
+  }
+  
+  .main-content.sidebar-open {
+    margin-left: 280px;
+  }
+  
+  /* Category Banner */
+  .category-banner {
+    position: relative;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 0 0 2rem 2rem;
+    overflow: hidden;
+    margin-bottom: 3rem;
+  }
+  
+  .banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+    display: flex;
+    align-items: center;
+  }
+  
+  .category-banner h1 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  }
+  
+  .category-banner p {
+    color: rgba(255,255,255,0.9);
+    font-size: 1.1rem;
+    margin: 0;
+  }
+  
+  /* Books Section */
+  .books-section {
+    padding: 2rem 0;
+  }
+  
+  /* Book Card Enhancements */
+  .book-card {
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+  
+  /* Pagination Customization */
+  .pagination {
+    gap: 0.5rem;
+  }
+  
+  .page-link {
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    color: #6B87A5;
+    background-color: white;
+    transition: all 0.3s ease;
+  }
+  
+  .page-link:hover:not(.disabled) {
+    background-color: #6B87A5;
+    color: white;
+  }
+  
+  .page-link.active {
+    background-color: #6B87A5;
+    color: white;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 992px) {
+    .main-content.sidebar-open {
+      margin-left: 0;
+    }
+  
+    .category-banner {
+      height: 250px;
+    }
+  
+    .category-banner h1 {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .category-banner {
+      height: 200px;
+    }
+  
+    .category-banner h1 {
+      font-size: 1.75rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .category-banner {
+      height: 150px;
+      margin-bottom: 2rem;
+    }
+  
+    .category-banner h1 {
+      font-size: 1.5rem;
+    }
+  
+    .books-section {
+      padding: 1rem 0;
+    }
+  }

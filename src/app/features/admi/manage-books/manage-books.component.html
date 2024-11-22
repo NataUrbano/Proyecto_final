@@ -1,0 +1,67 @@
+<div class="manage-books">
+    <app-admin-header [showSearch]="false"></app-admin-header>
+    <app-admin-sidebar [isOpen]="isSidebarOpen"></app-admin-sidebar>
+  
+    <main class="main-content" [class.sidebar-open]="isSidebarOpen">
+      <div class="container-fluid">
+        <div class="page-header">
+          <div class="d-flex justify-content-between align-items-center">
+            <h1>{{ 'admin.books.title' | translate }}</h1>
+            <button class="btn btn-primary" (click)="openBookModal()">
+              <i class="bi bi-plus-lg"></i> {{ 'admin.books.add' | translate }}
+            </button>
+          </div>
+  
+          <div class="filters-row">
+            <div class="search-box">
+              <div class="input-group">
+                <span class="input-group-text">
+                  <i class="bi bi-search"></i>
+                </span>
+                <input
+                  type="text"
+                  class="form-control"
+                  [(ngModel)]="searchTerm"
+                  [placeholder]="'admin.books.search' | translate"
+                >
+              </div>
+            </div>
+  
+            <select class="form-select" [(ngModel)]="selectedCategory">
+              <option value="all">{{ 'admin.books.all_categories' | translate }}</option>
+              <option *ngFor="let cat of categories" [value]="cat.id">
+                {{ cat.name }}
+              </option>
+            </select>
+          </div>
+        </div>
+  
+        <!-- Books Grid -->
+        <div class="row g-4">
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3" *ngFor="let book of filteredBooks">
+            <div class="book-card">
+              <div class="book-cover">
+                <img [src]="book.coverUrl" [alt]="book.title">
+                <div class="book-actions">
+                  <button class="btn btn-light" (click)="openBookModal(book)">
+                    <i class="bi bi-pencil"></i>
+                  </button>
+                  <button class="btn btn-danger" (click)="deleteBook(book.id)">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="book-info">
+                <h3>{{ book.title }}</h3>
+                <p class="author">{{ book.author }}</p>
+                <div class="book-meta">
+                  <span class="badge bg-primary">{{ book.category }}</span>
+                  <span class="copies">{{ book.copiesAvailable }}/{{ book.totalCopies }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>

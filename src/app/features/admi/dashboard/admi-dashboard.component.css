@@ -1,0 +1,97 @@
+/* features/admin/dashboard/admin-dashboard.component.css */
+.admin-dashboard {
+  min-height: 100vh;
+  background-color: #F4F1EA;
+}
+
+.main-content {
+  padding-top: 76px;
+  transition: margin-left 0.3s ease;
+}
+
+.main-content.sidebar-open {
+  margin-left: 280px;
+}
+
+.dashboard-header {
+  padding: 2rem 0;
+}
+
+.filters-row {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.search-box {
+  flex: 1;
+}
+
+.form-select {
+  width: 200px;
+}
+
+.table-responsive {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.table th {
+  background-color: #f8f9fa;
+  padding: 1rem;
+}
+
+.table td {
+  vertical-align: middle;
+  padding: 1rem;
+}
+
+.badge {
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+}
+
+.btn-group {
+  gap: 0.5rem;
+}
+
+.btn-sm {
+  padding: 0.25rem 0.5rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: #666;
+}
+
+.empty-state i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 992px) {
+  .main-content.sidebar-open {
+    margin-left: 0;
+  }
+
+  .filters-row {
+    flex-direction: column;
+  }
+
+  .form-select {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-header {
+    padding: 1rem 0;
+  }
+
+  .table-responsive {
+    padding: 0.5rem;
+  }
+}

@@ -1,0 +1,173 @@
+/* features/user/pages/dashboard/dashboard.component.css */
+.dashboard-layout {
+  min-height: 100vh;
+  background-color: #F4F1EA;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #C5D5BA;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-logo {
+  height: 32px;
+  margin-right: 0.5rem;
+}
+
+.navbar-toggler {
+  border: none;
+  padding: 0.5rem;
+}
+
+.search-box {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 400px;
+  width: 100%;
+}
+
+.btn-search {
+  background-color: #6B87A5;
+  color: white;
+}
+
+/* Main Content */
+.main-content {
+  padding-top: 76px; /* Navbar height + padding */
+  transition: margin-left 0.3s ease;
+}
+
+.main-content.sidebar-open {
+  margin-left: 280px;
+}
+
+/* Welcome Section */
+.welcome-section {
+  background: linear-gradient(135deg, #C5D5BA 0%, #E6E9DA 100%);
+  padding: 3rem 0;
+  text-align: center;
+  border-radius: 0 0 2rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.welcome-content h1 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.welcome-content h2 {
+  font-size: 2rem;
+  color: #6B87A5;
+  margin-bottom: 1rem;
+}
+
+.welcome-content p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* Categories Section */
+.section-title {
+  color: #333;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 1.75rem;
+}
+
+.category-card {
+  border-radius: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.category-image {
+  position: relative;
+  aspect-ratio: 16/9;
+}
+
+.category-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.category-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: white;
+}
+
+.category-overlay h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.category-overlay p {
+  margin: 0;
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+/* Recent Books Section */
+.recent-books-section {
+  padding: 3rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .main-content.sidebar-open {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-box {
+    max-width: none;
+  }
+
+  .welcome-section {
+    padding: 2rem 0;
+  }
+
+  .welcome-content h1 {
+    font-size: 1.25rem;
+  }
+
+  .welcome-content h2 {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    padding: 0.5rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .category-overlay {
+    padding: 1rem;
+  }
+
+  .category-overlay h3 {
+    font-size: 1.1rem;
+  }
+}

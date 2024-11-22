@@ -1,0 +1,71 @@
+<!-- features/search/pages/search-results/search-results.component.html -->
+<div class="search-page">
+  <!-- Header con barra de búsqueda integrada -->
+  <app-header 
+    [showSearch]="true"
+    [initialSearchValue]="searchQuery"
+    (searchQuery)="onSearchInput($event)">
+  </app-header>
+
+  <main class="main-content">
+    <div class="container">
+      <!-- Resultados Header -->
+      <div class="results-header">
+        <h1>{{ 'search.results_for' | translate:{ query: searchQuery } }}</h1>
+        
+        <!-- Filtros y Ordenamiento -->
+        <div class="filters-row">
+          <div class="filters">
+            <select 
+              class="form-select"
+              [(ngModel)]="filters.genre"
+              (change)="applyFilter()"
+            >
+              <option value="">{{ 'search.filters.all_genres' | translate }}</option>
+              <option value="fiction">{{ 'search.filters.fiction' | translate }}</option>
+              <!-- Más géneros... -->
+            </select>
+
+            <select 
+              class="form-select"
+              [(ngModel)]="filters.availability"
+              (change)="applyFilter()"
+            >
+              <option value="all">{{ 'search.filters.all_availability' | translate }}</option>
+              <option value="available">{{ 'search.filters.available' | translate }}</option>
+            </select>
+          </div>
+
+          <select 
+            class="form-select sort-select"
+            [(ngModel)]="currentSort"
+            (change)="updateSort($event.target.value)"
+          >
+            <option *ngFor="let option of sortOptions" [value]="option.value">
+              {{ option.label | translate }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Loading State -->
+      <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+
+      <!-- No Results -->
+      <div *ngIf="!isLoading && searchResults.length === 0" class="no-results">
+        <i class="bi bi-search"></i>
+        <h2>{{ 'search.no_results' | translate }}</h2>
+        <p>{{ 'search.try_different' | translate }}</p>
+      </div>
+
+      <!-- Results Grid -->
+      <div class="results-grid" *ngIf="!isLoading && searchResults.length > 0">
+        <app-book-card
+          *ngFor="let book of searchResults"
+          [book]="book"
+          (click)="navigateToBookDetail(book.id)"
+        ></app-book-card>
+      </div>
+    </div>
+  </main>
+</div>

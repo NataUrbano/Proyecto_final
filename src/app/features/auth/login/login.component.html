@@ -1,0 +1,92 @@
+<!-- features/auth/pages/login/login.component.html -->
+<div class="login-page">
+  <!-- Header con Logo -->
+  <nav class="navbar navbar-light">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" routerLink="/">
+        <img src="assets/images/book-icon.svg" alt="Epílogo" height="32" class="book-icon">
+        <span class="ms-2">Epilogo</span>
+      </a>
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about">{{ 'nav.about' | translate }}</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Contenedor del Formulario -->
+  <div class="login-container container">
+    <div class="card login-card">
+      <!-- Logo Central -->
+      <div class="text-center mb-4">
+        <img src="assets/images/book-icon.svg" alt="Epílogo" class="login-logo">
+      </div>
+
+      <!-- Mensajes de Alerta -->
+      <div *ngIf="alertMessage" [ngClass]="['alert', alertClass]" role="alert">
+        {{ alertMessage | translate }}
+      </div>
+
+      <!-- Formulario -->
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <!-- Campo Usuario -->
+        <div class="form-group mb-3">
+          <label for="username" class="form-label">{{ 'login.username' | translate }}</label>
+          <input
+            type="text"
+            id="username"
+            formControlName="username"
+            class="form-control"
+            [class.is-invalid]="isFieldInvalid('username')"
+            [placeholder]="'login.username_placeholder' | translate"
+          >
+          <div class="invalid-feedback" *ngIf="getErrorMessage('username') as error">
+            {{ error | translate }}
+          </div>
+        </div>
+
+        <!-- Campo Contraseña -->
+        <div class="form-group mb-4">
+          <label for="password" class="form-label">{{ 'login.password' | translate }}</label>
+          <input
+            type="password"
+            id="password"
+            formControlName="password"
+            class="form-control"
+            [class.is-invalid]="isFieldInvalid('password')"
+            [placeholder]="'login.password_placeholder' | translate"
+          >
+          <div class="invalid-feedback" *ngIf="getErrorMessage('password') as error">
+            {{ error | translate }}
+          </div>
+        </div>
+
+        <!-- Botón Submit -->
+        <button 
+          type="submit" 
+          class="btn btn-login w-100"
+          [disabled]="loginForm.invalid || isLoading"
+        >
+          <span *ngIf="!isLoading">{{ 'login.submit' | translate }}</span>
+          <div *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </button>
+
+        <!-- Enlace a Registro -->
+        <div class="text-center mt-3">
+          <p class="register-text">
+            {{ 'login.no_account' | translate }} 
+            <a routerLink="/auth/register" class="register-link">
+              {{ 'login.register_link' | translate }}
+            </a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <app-footer></app-footer>
+</div>

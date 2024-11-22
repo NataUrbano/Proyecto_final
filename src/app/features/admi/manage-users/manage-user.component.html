@@ -1,0 +1,97 @@
+<!-- features/admin/pages/manage-users/manage-users.component.html -->
+<div class="manage-users">
+  <!-- Header -->
+  <app-admin-header 
+    [showSearch]="false"
+    (sidebarToggle)="toggleSidebar()">
+  </app-admin-header>
+
+  <!-- Sidebar -->
+  <app-admin-sidebar
+    [isOpen]="isSidebarOpen"
+    (closeEvent)="toggleSidebar()">
+  </app-admin-sidebar>
+
+  <!-- Main Content -->
+  <main class="main-content" [class.sidebar-open]="isSidebarOpen">
+    <div class="container-fluid">
+      <!-- Page Header -->
+      <div class="page-header">
+        <h1>{{ 'admin.users.title' | translate }}</h1>
+
+        <!-- Filters -->
+        <div class="filters-row">
+          <div class="search-box">
+            <div class="input-group">
+              <span class="input-group-text">
+                <i class="bi bi-search"></i>
+              </span>
+              <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="searchTerm"
+                [placeholder]="'admin.users.search' | translate"
+              >
+            </div>
+          </div>
+
+          <select class="form-select" [(ngModel)]="roleFilter">
+            <option value="all">{{ 'admin.users.all_roles' | translate }}</option>
+            <option value="USER">{{ 'admin.users.role.user' | translate }}</option>
+            <option value="ADMIN">{{ 'admin.users.role.admin' | translate }}</option>
+          </select>
+
+          <select class="form-select" [(ngModel)]="statusFilter">
+            <option value="all">{{ 'admin.users.all_status' | translate }}</option>
+            <option value="active">{{ 'admin.users.status.active' | translate }}</option>
+            <option value="inactive">{{ 'admin.users.status.inactive' | translate }}</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Users Table -->
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>{{ 'admin.users.name' | translate }}</th>
+              <th>{{ 'admin.users.email' | translate }}</th>
+              <th>{{ 'admin.users.role' | translate }}</th>
+              <th>{{ 'admin.users.registration_date' | translate }}</th>
+              <th>{{ 'admin.users.status' | translate }}</th>
+              <th>{{ 'admin.users.actions' | translate }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of filteredUsers">
+              <td>{{ user.id }}</td>
+              <td>{{ user.firstName }} {{ user.lastName }}</td>
+              <td>{{ user.email }}</td>
+              <td>
+                <span class="badge" [ngClass]="getRoleBadgeClass(user.role)">
+                  {{ 'admin.users.role.' + user.role.toLowerCase() | translate }}
+                </span>
+              </td>
+              <td>{{ user.registrationDate | date }}</td>
+              <td>
+                <span class="badge" [class.bg-success]="user.status === 'active'" [class.bg-danger]="user.status === 'inactive'">
+                  {{ 'admin.users.status.' + user.status | translate }}
+                </span>
+              </td>
+              <td>
+                <button 
+                  class="btn btn-sm btn-outline-primary"
+                  (click)="editUserRole(user)"
+                  [matTooltip]="'admin.users.edit_role' | translate"
+                >
+                  <i class="bi bi-pencil"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</div>

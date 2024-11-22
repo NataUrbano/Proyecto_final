@@ -1,0 +1,196 @@
+{
+    "auth": {
+      "login": {
+        "title": "Utente",
+        "username": "Nome utente",
+        "username_placeholder": "Inserisci il tuo nome utente",
+        "password": "Password",
+        "password_placeholder": "Inserisci la tua password",
+        "submit": "Accedi",
+        "register_link": "Registrati"
+      },
+      "register": {
+        "title": "Crea un account",
+        "subtitle": "È rapido e facile.",
+        "firstName": "Nome",
+        "firstName_placeholder": "Inserisci il tuo nome",
+        "lastName": "Cognome",
+        "lastName_placeholder": "Inserisci il tuo cognome",
+        "email": "Email",
+        "email_placeholder": "Inserisci la tua email",
+        "password": "Nuova password",
+        "password_placeholder": "Inserisci la tua password",
+        "submit": "Registrati",
+        "login_text": "Hai già un account?",
+        "login_link": "Accedi"
+      }
+    },
+    "header": {
+      "search": "Cerca libri...",
+      "search_button": "Cerca"
+    },
+    "sidebar": {
+      "user": {
+        "profile": "Profilo",
+        "home": "Pagina iniziale",
+        "search": "Ricerca specifica",
+        "logout": "Esci"
+      },
+      "admin": {
+        "profile": "Profilo",
+        "books": "Prenotazioni libri",
+        "catalog": "Libri",
+        "users": "Utenti",
+        "logout": "Esci"
+      }
+    },
+    "footer": {
+      "useful_links": "Link utili",
+      "about_us": "Chi siamo",
+      "login": "Accedi",
+      "register": "Registrati",
+      "social": "Social Media",
+      "contact": "Contattaci",
+      "address": "Indirizzo: Via Enciso 123, Città, Paese",
+      "phone": "Telefono: +123 456 7890",
+      "email": "Email: contatto@epilogo.com",
+      "copyright": "Copyright © 2024 Epílogo. Tutti i diritti riservati."
+    },
+    "home": {
+      "hero": {
+        "title": "Epílogo",
+        "subtitle": "La biblioteca digitale per tutti",
+        "description": "Scopri un'esperienza di prenotazione unica su Epílogo, la piattaforma virtuale dove puoi esplorare e prenotare i tuoi libri preferiti in modo rapido e semplice."
+      },
+      "buttons": {
+        "login": "Accedi",
+        "register": "Registrati"
+      },
+      "features": {
+        "title": "Perché scegliere Epílogo?",
+        "search": {
+          "title": "Ricerca Intelligente",
+          "description": "Trova i tuoi libri preferiti con il nostro sistema di ricerca avanzato"
+        },
+        "reserve": {
+          "title": "Prenotazione Facile",
+          "description": "Prenota i tuoi libri in pochi clic e ritirali quando vuoi"
+        },
+        "track": {
+          "title": "Monitoraggio in tempo reale",
+          "description": "Rimani informato sullo stato delle tue prenotazioni in ogni momento"
+        }
+      }
+    },
+    "about": {
+      "header": {
+        "login": "Accedi"
+      },
+      "hero": {
+        "title": "Chi siamo",
+        "subtitle": "Trasformiamo il modo di accedere alla letteratura"
+      },
+      "mission": {
+        "title": "La nostra missione",
+        "description": "In Epílogo, ci dedichiamo a rendere la letteratura accessibile a tutti. Crediamo nel potere dei libri di cambiare le vite e vogliamo facilitarne l'accesso attraverso la nostra piattaforma digitale.",
+        "join_button": "Unisciti ora",
+        "login_button": "Accedi"
+      },
+      "values": {
+        "title": "I nostri valori",
+        "accessibility": {
+          "title": "Accessibilità",
+          "description": "Rendiamo i libri accessibili a tutti, ovunque e in qualsiasi momento"
+        },
+        "community": {
+          "title": "Comunità",
+          "description": "Costruiamo una comunità appassionata di lettura e conoscenza"
+        },
+        "innovation": {
+          "title": "Innovazione",
+          "description": "Utilizziamo la tecnologia per migliorare l'esperienza di prestito dei libri"
+        }
+      },
+      "team": {
+        "title": "Il nostro team",
+        "roles": {
+          "founder": "Fondatore & CEO",
+          "tech": "Direttore Tecnologico",
+          "librarian": "Bibliotecaria Principale"
+        }
+      }
+    },
+    "dashboard": {
+      "greeting": "Ciao",
+      "question": "Quale libro cerchi oggi?",
+      "categories": "Categorie",
+      "featured_books": "Libri in evidenza",
+      "see_all": "Vedi tutto",
+      "search": {
+        "placeholder": "Cerca libri...",
+        "button": "Cerca"
+      }
+    },
+    "categories": {
+      "historical": "Romanzo Storico",
+      "description": "Esplora storie affascinanti ambientate in epoche diverse",
+      "sci_fi": "Fantascienza",
+      "thriller": "Thriller",
+      "poetry": "Poesia",
+      "historical_fiction": "Narrativa Storica",
+      "world_literature": "Letteratura Mondiale",
+      "book_count": "{{count}} libri"
+    },
+    "catalog": {
+      "total_books": "{{count}} libri disponibili",
+      "no_books": "Non ci sono libri disponibili in questa categoria",
+      "filter": {
+        "title": "Filtri",
+        "availability": "Disponibilità",
+        "available": "Disponibile",
+        "all": "Tutti",
+        "sort": "Ordina per",
+        "newest": "Più recenti",
+        "title": "Titolo",
+        "author": "Autore"
+      }
+    },
+    "book": {
+      "genre": "Genere",
+      "copies": "Numero di copie",
+      "description": "Descrizione",
+      "reserve": "Prenota",
+      "availability": {
+        "available": "DISPONIBILE",
+        "low_stock": "POCHE COPIE DISPONIBILI",
+        "out_of_stock": "NESSUNA COPIA DISPONIBILE"
+      },
+      "messages": {
+        "reserve_success": "Libro prenotato con successo",
+        "reserve_error": "Errore nella prenotazione del libro",
+        "not_available": "Questo libro non è attualmente disponibile"
+      }
+    },
+    "pagination": {
+      "previous": "Precedente",
+      "next": "Successivo",
+      "of": "di"
+    },
+    "search": {
+      "results_for": "Risultati per '{{query}}'",
+      "no_results": "Nessun risultato trovato",
+      "try_different": "Prova con parole chiave diverse o modifica i filtri",
+      "filters": {
+        "all_genres": "Tutti i generi",
+        "fiction": "Narrativa",
+        "all_availability": "Tutta la disponibilità",
+        "available": "Disponibili"
+      },
+      "sort": {
+        "relevance": "Rilevanza",
+        "title": "Titolo",
+        "author": "Autore"
+      }
+    }
+  }
+  

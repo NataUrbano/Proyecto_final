@@ -1,0 +1,136 @@
+/* features/auth/pages/login/login.component.css */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #F4F1EA;
+}
+
+.navbar {
+  background-color: transparent;
+  padding: 1rem 0;
+}
+
+.book-icon {
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover .book-icon {
+  transform: rotate(-10deg);
+}
+
+.login-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.login-logo {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  color: #666;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.form-control {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #6B87A5;
+  box-shadow: 0 0 0 0.2rem rgba(107, 135, 165, 0.25);
+}
+
+.form-control.is-invalid {
+  border-color: #dc3545;
+  background-image: none;
+}
+
+.btn-login {
+  background-color: #6B87A5;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn-login:hover:not(:disabled) {
+  background-color: #5a7390;
+}
+
+.btn-login:disabled {
+  background-color: #a5b7c9;
+  cursor: not-allowed;
+}
+
+.alert {
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.alert-danger {
+  background-color: #ffd7d7;
+  color: #dc3545;
+}
+
+.register-text {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.register-link {
+  color: #6B87A5;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.register-link:hover {
+  color: #5a7390;
+  text-decoration: underline;
+}
+
+/* Estilos responsivos */
+@media (max-width: 576px) {
+  .login-card {
+    padding: 1.5rem;
+  }
+
+  .navbar {
+    padding: 0.5rem 0;
+  }
+
+  .login-logo {
+    width: 48px;
+    height: 48px;
+  }
+}

@@ -1,0 +1,143 @@
+<!-- profile.component.html -->
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg bg-epilogo">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="assets/images/logo.png" alt="Epílogo" height="30">
+        Epílogo
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/user/dashboard">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/user/search">Búsqueda</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="profile-container">
+    <div class="container py-5">
+      <!-- Welcome Section -->
+      <div class="welcome-section mb-5">
+        <h1>Hola, {{userProfile?.firstName}}!</h1>
+        <p class="lead">Bienvenido a tu perfil de Epílogo</p>
+      </div>
+  
+      <div class="row">
+        <!-- Profile Information -->
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-header bg-epilogo-light d-flex justify-content-between align-items-center">
+              <h5 class="mb-0">Información Personal</h5>
+              <button class="btn btn-sm" [class.btn-edit]="!isEditing" [class.btn-save]="isEditing" (click)="isEditing ? saveProfile() : toggleEdit()">
+                {{ isEditing ? 'Guardar' : 'Editar' }}
+              </button>
+            </div>
+            <div class="card-body">
+              <form [formGroup]="profileForm">
+                <div class="mb-3">
+                  <label class="form-label">ID de Epílogo</label>
+                  <input type="text" class="form-control" [value]="userProfile?.epilogoId" disabled>
+                </div>
+  
+                <div class="mb-3">
+                  <label class="form-label">Nombre</label>
+                  <input type="text" class="form-control" formControlName="firstName" [readonly]="!isEditing">
+                </div>
+  
+                <div class="mb-3">
+                  <label class="form-label">Apellidos</label>
+                  <input type="text" class="form-control" formControlName="lastName" [readonly]="!isEditing">
+                </div>
+  
+                <div class="mb-3">
+                  <label class="form-label">Correo Electrónico</label>
+                  <input type="email" class="form-control" formControlName="email" [readonly]="!isEditing">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Language Settings -->
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-header bg-epilogo-light">
+              <h5 class="mb-0">Configuración</h5>
+            </div>
+            <div class="card-body">
+              <div class="mb-3">
+                <label class="form-label">Idioma</label>
+                <select class="form-select" [(ngModel)]="currentLanguage" (change)="changeLanguage($event.target.value)">
+                  <option *ngFor="let lang of availableLanguages" [value]="lang.code">
+                    {{ lang.name }}
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Reservations -->
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header bg-epilogo-light">
+              <h5 class="mb-0">Mis Reservas</h5>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Libro</th>
+                      <th>Fecha de Reserva</th>
+                      <th>Fecha de Retiro</th>
+                      <th>Estado</th>
+                      <th>Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let reservation of reservations">
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <img [src]="reservation.bookCover" alt="Book cover" class="book-thumbnail me-2">
+                          {{ reservation.bookTitle }}
+                        </div>
+                      </td>
+                      <td>{{ reservation.reservationDate | date:'shortDate' }}</td>
+                      <td>{{ reservation.pickupDate | date:'shortDate' }}</td>
+                      <td>
+                        <span [class]="getStatusColor(reservation.status)" class="status-badge">
+                          {{ 'reservation.status.' + reservation.status | translate }}
+                        </span>
+                      </td>
+                      <td>
+                        <button class="btn btn-sm btn-outline-primary me-2">
+                          Ver detalles
+                        </button>
+                        <button class="btn btn-sm btn-outline-danger" *ngIf="reservation.status === 'pending'">
+                          Cancelar
+                        </button>
+                      </td>
+                    </tr>
+                    <tr *ngIf="reservations.length === 0">
+                      <td colspan="5" class="text-center py-4">
+                        No tienes reservas activas
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

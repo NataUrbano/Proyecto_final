@@ -1,0 +1,166 @@
+/* features/auth/pages/register/register.component.css */
+.register-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #F4F1EA;
+}
+
+.navbar {
+  background-color: transparent;
+  padding: 1rem 0;
+}
+
+.book-icon {
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover .book-icon {
+  transform: rotate(-10deg);
+}
+
+.register-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.register-card {
+  width: 100%;
+  max-width: 600px;
+  padding: 2rem;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.register-logo {
+  width: 64px;
+  height: 64px;
+}
+
+h2 {
+  color: #333;
+  font-size: 1.75rem;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  color: #666;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.form-control {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #6B87A5;
+  box-shadow: 0 0 0 0.2rem rgba(107, 135, 165, 0.25);
+}
+
+.form-control.is-invalid {
+  border-color: #dc3545;
+  background-image: none;
+}
+
+.btn-register {
+  background-color: #6B87A5;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn-register:hover:not(:disabled) {
+  background-color: #5a7390;
+}
+
+.btn-register:disabled {
+  background-color: #a5b7c9;
+  cursor: not-allowed;
+}
+
+.alert {
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.alert-danger {
+  background-color: #ffd7d7;
+  color: #dc3545;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.login-text {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.login-link {
+  color: #6B87A5;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.login-link:hover {
+  color: #5a7390;
+  text-decoration: underline;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .register-card {
+    padding: 1.5rem;
+  }
+  
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .col-md-6 {
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    padding: 0.5rem 0;
+  }
+
+  .register-logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}

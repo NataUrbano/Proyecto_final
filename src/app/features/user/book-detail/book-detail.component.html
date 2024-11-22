@@ -1,0 +1,77 @@
+<!-- features/books/pages/book-detail/book-detail.component.html -->
+<div class="book-detail-page">
+  <!-- Header -->
+  <app-header 
+    [showSearch]="true"
+    (sidebarToggle)="toggleSidebar()">
+  </app-header>
+
+  <!-- Sidebar -->
+  <app-user-sidebar 
+    [isOpen]="isSidebarOpen"
+    (closeEvent)="toggleSidebar()">
+  </app-user-sidebar>
+
+  <!-- Main Content -->
+  <main class="main-content" [class.sidebar-open]="isSidebarOpen">
+    <div class="container">
+      <!-- Loading State -->
+      <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+
+      <!-- Book Content -->
+      <div class="book-content" *ngIf="!isLoading">
+        <div class="row">
+          <!-- Book Cover -->
+          <div class="col-md-5">
+            <div class="book-cover-wrapper">
+              <img [src]="book.coverUrl" [alt]="book.title" class="book-cover">
+            </div>
+          </div>
+
+          <!-- Book Info -->
+          <div class="col-md-7">
+            <div class="book-info">
+              <h1 class="book-title">{{ book.title }}</h1>
+              <h2 class="book-author">{{ book.author }}</h2>
+
+              <div class="book-metadata">
+                <div class="metadata-item">
+                  <span class="label">{{ 'book.genre' | translate }}:</span>
+                  <span class="value">{{ book.genre }}</span>
+                </div>
+
+                <div class="availability-status" [style.color]="getAvailabilityColor()">
+                  {{ getAvailabilityStatus() | translate }}
+                </div>
+
+                <div class="copies-info">
+                  <span class="label">{{ 'book.copies' | translate }}:</span>
+                  <span class="value">{{ book.copiesAvailable }}</span>
+                </div>
+              </div>
+
+              <!-- Reserve Button -->
+              <button 
+                class="btn btn-reserve"
+                [class.disabled]="getAvailabilityStatus() === BookAvailability.OUT_OF_STOCK"
+                [disabled]="getAvailabilityStatus() === BookAvailability.OUT_OF_STOCK || reservationInProgress"
+                (click)="onReserve()"
+              >
+                <span *ngIf="!reservationInProgress">
+                  {{ 'book.reserve' | translate }}
+                </span>
+                <div *ngIf="reservationInProgress" class="spinner-border spinner-border-sm"></div>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Book Description -->
+        <div class="book-description mt-5">
+          <h3>{{ 'book.description' | translate }}</h3>
+          <p>{{ book.description }}</p>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

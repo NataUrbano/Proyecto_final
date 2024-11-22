@@ -1,0 +1,71 @@
+<!-- features/books/pages/reservation/reservation.component.html -->
+<div class="reservation-page">
+  <app-header [showSearch]="false"></app-header>
+
+  <main class="main-content">
+    <div class="container">
+      <div class="reservation-card">
+        <!-- Loading State -->
+        <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+
+        <!-- Reservation Content -->
+        <div *ngIf="!isLoading" class="reservation-content">
+          <!-- Book Preview -->
+          <div class="book-preview text-center">
+            <img [src]="book?.coverUrl" [alt]="book?.title" class="book-cover">
+            <h1 class="mt-4">{{ 'reservation.title' | translate }}</h1>
+            <p class="subtitle">{{ 'reservation.subtitle' | translate }}</p>
+          </div>
+
+          <!-- Reservation Form -->
+          <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()" class="reservation-form">
+            <!-- Fecha de reserva -->
+            <div class="form-group">
+              <label>{{ 'reservation.date_label' | translate }}</label>
+              <p class="form-hint">{{ 'reservation.date_hint' | translate }}</p>
+              <input 
+                type="date" 
+                formControlName="reservationDate"
+                class="form-control"
+                [min]="minDate"
+                [max]="maxDate"
+              >
+              <div *ngIf="reservationForm.get('reservationDate')?.errors?.['required']" class="invalid-feedback">
+                {{ 'reservation.errors.date_required' | translate }}
+              </div>
+            </div>
+
+            <!-- Duración de reserva -->
+            <div class="form-group">
+              <label>{{ 'reservation.duration_label' | translate }}</label>
+              <p class="form-hint">{{ 'reservation.duration_hint' | translate }}</p>
+              <select formControlName="duration" class="form-select">
+                <option value="">{{ 'reservation.select_duration' | translate }}</option>
+                <option *ngFor="let option of durationOptions" [value]="option.value">
+                  {{ option.label }}
+                </option>
+              </select>
+              <div *ngIf="reservationForm.get('duration')?.errors?.['required']" class="invalid-feedback">
+                {{ 'reservation.errors.duration_required' | translate }}
+              </div>
+            </div>
+
+            <!-- Nota Informativa -->
+            <div class="info-box">
+              <h3>{{ 'reservation.note' | translate }}</h3>
+              <p>{{ 'reservation.note_content' | translate }}</p>
+            </div>
+
+            <!-- Submit Button -->
+            <button 
+              type="submit" 
+              class="btn btn-reserve w-100"
+              [disabled]="!reservationForm.valid">
+              {{ 'reservation.submit' | translate }}
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

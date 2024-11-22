@@ -1,0 +1,39 @@
+<!-- modules/public/home/home.component.html -->
+<div class="home-container">
+    <app-header></app-header>
+  
+    <main class="main-content">
+      <section class="hero-section">
+        <div class="container">
+          <div class="content-wrapper">
+            <h1 class="main-title">Epílogo</h1>
+            <h2 class="subtitle">La biblioteca digital para todos</h2>
+            
+            <p class="description">
+              Descubre una experiencia de reserva única en Epílogo, la plataforma
+              virtual donde puedes explorar y reservar tus libros favoritos de
+              manera sencilla y rápida. Nuestro sistema te muestra en tiempo real
+              el estado de disponibilidad de cada libro, para que puedas saber al
+              instante si hay copias disponibles, pocas copias restantes o si están
+              todas reservadas.
+            </p>
+  
+            <div class="button-group">
+              <button class="btn btn-primary" (click)="navigateToLogin()">
+                Iniciar sesión
+              </button>
+              <button class="btn btn-outline" (click)="navigateToRegister()">
+                Registrarte
+              </button>
+            </div>
+          </div>
+  
+          <div class="image-wrapper">
+            <img src="assets/images/epilogue-book.jpg" alt="Epílogo libro" class="hero-image">
+          </div>
+        </div>
+      </section>
+    </main>
+  
+    <app-footer></app-footer>
+  </div>
