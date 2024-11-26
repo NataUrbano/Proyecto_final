@@ -1,0 +1,75 @@
+<nav class="navbar">
+    <!-- Botón menú hamburguesa -->
+    <button class="menu-btn" (click)="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+    </button>
+    <div class="logo-container">
+      <img src="assets/img/Logo.png" alt="Epílogo" class="logo">
+      <span class="brand-name">Epílogo</span>
+    </div>
+  
+    <!-- Buscador -->
+    <button class="search-btn" (click)="toggleSearch()">
+      <i class="fas fa-search"></i>
+    </button>
+  
+    <!-- Sidebar -->
+    @if (isSidebarOpen) {
+      <div class="sidebar" [class.open]="isSidebarOpen">
+        <!-- Header del Sidebar -->
+        <div class="sidebar-header">
+          <img src="assets/img/Logo.png" alt="Epílogo" class="logo">
+          <span class="brand-name">Epílogo</span>
+          <button class="close-btn" (click)="toggleSidebar()">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+  
+        <!-- Menú del Sidebar -->
+        <nav class="sidebar-nav">
+          <a routerLink="/profile" class="nav-item">
+            <i class="fas fa-user"></i>
+            <span>Profile</span>
+          </a>
+  
+          @if (authService.isAdmin()) {
+            <a routerLink="/books" class="nav-item">
+              <i class="fas fa-book"></i>
+              <span>Libros</span>
+            </a>
+            <a routerLink="/users" class="nav-item">
+              <i class="fas fa-users"></i>
+              <span>Usuarios</span>
+            </a>
+          } @else {
+            <a routerLink="/home" class="nav-item">
+              <i class="fas fa-home"></i>
+              <span>Página de Inicio</span>
+            </a>
+          }
+  
+          <a (click)="authService.logout()" class="nav-item logout">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Cerrar sesión</span>
+          </a>
+        </nav>
+      </div>
+  
+      <!-- Overlay para cerrar el sidebar -->
+      <div class="sidebar-overlay" (click)="toggleSidebar()"></div>
+    }
+  
+    <!-- Overlay del buscador -->
+    @if (isSearchOpen) {
+      <div class="search-overlay">
+        <div class="search-container">
+          <input 
+            type="text"
+            placeholder="Buscar libros..."
+            class="search-input"
+            autofocus>
+        </div>
+      </div>
+    }
+  </nav>
+  

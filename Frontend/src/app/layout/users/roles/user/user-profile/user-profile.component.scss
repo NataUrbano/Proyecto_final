@@ -1,0 +1,119 @@
+.table-container {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 2px 4px rgba(93, 93, 197, 0.1);
+    overflow: hidden;
+    margin: 1rem 0;
+  }
+  
+  .table-responsive {
+    overflow-x: auto;
+    margin: 1rem;
+    
+    @media (max-width: 768px) {
+      margin: 0.5rem;
+    }
+  }
+  
+  .reservation-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+  
+    th, td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid #E0E0FF;
+      
+      @media (max-width: 768px) {
+        padding: 0.75rem;
+      }
+    }
+  
+    th {
+      font-weight: 600;
+      color: #242464;
+      background-color: #F5F5FF;
+      white-space: nowrap;
+    }
+  
+    td {
+      color: #5D5DC5;
+    }
+  
+    .status-badge {
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      display: inline-block;
+      text-align: center;
+      min-width: 100px;
+  
+      &.activa {
+        background-color: #8BDA82;
+        color: darken(#8BDA82, 40%);
+      }
+  
+      &.vencida {
+        background-color: #F04C4C;
+        color: white;
+      }
+  
+      &.cancelada {
+        background-color: #E0E0FF;
+        color: #5D5DC5;
+      }
+  
+      &.completada {
+        background-color: #5555FF;
+        color: white;
+      }
+    }
+  
+    .actions-cell {
+      .btn-cancel {
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        border: none;
+        background-color: #F04C4C;
+        color: white;
+        cursor: pointer;
+        font-weight: 500;
+        transition: all 0.2s ease;
+  
+        &:hover {
+          background-color: darken(#F04C4C, 10%);
+        }
+  
+        &:focus {
+          outline: none;
+          box-shadow: 0 0 0 2px rgba(240, 76, 76, 0.3);
+        }
+      }
+    }
+  
+    .loading-cell, .empty-cell {
+      text-align: center;
+      padding: 2rem;
+      color: #5D5DC5;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .reservation-table {
+      th, td {
+        padding: 0.5rem;
+        font-size: 0.875rem;
+      }
+  
+      .status-badge {
+        min-width: 80px;
+        padding: 0.25rem 0.5rem;
+      }
+  
+      .btn-cancel {
+        padding: 0.25rem 0.75rem;
+      }
+    }
+  }

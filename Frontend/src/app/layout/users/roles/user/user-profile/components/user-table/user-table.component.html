@@ -1,0 +1,59 @@
+<div class="table-container">
+    <div class="table-responsive">
+      <table class="reservation-table">
+        <thead>
+          <tr>
+            @for (column of columns(); track column.key) {
+              <th>{{ column.label }}</th>
+            }
+            @if (!showDevolucionReal()) {
+              <th>Acciones</th>
+            }
+          </tr>
+        </thead>
+        <tbody>
+          @if (loading()) {
+            <tr>
+              <td [colSpan]="columns().length + (!showDevolucionReal() ? 1 : 0)" class="loading-cell">
+                Cargando reservaciones...
+              </td>
+            </tr>
+          } @else if (reservations().length === 0) {
+            <tr>
+              <td [colSpan]="columns().length + (!showDevolucionReal() ? 1 : 0)" class="empty-cell">
+                No hay reservaciones para mostrar
+              </td>
+            </tr>
+          } @else {
+            @for (reservation of reservations(); track reservation.id_reserva) {
+              <tr>
+                <td>{{ reservation.id_reserva }}</td>
+                <td>{{ reservation.id_libro }}</td>
+                <td>{{ reservation.titulo_libro }}</td>
+                <td>{{ reservation.fecha_reserva | date:'dd/MM/yyyy' }}</td>
+                <td>{{ reservation.fecha_devolucion_esperada | date:'dd/MM/yyyy' }}</td>
+                @if (showDevolucionReal()) {
+                  <td>{{ reservation.fecha_devolucion_real | date:'dd/MM/yyyy' }}</td>
+                }
+                <td>
+                  <span class="status-badge" [class]="getStatusClass(reservation.estado)">
+                    {{ reservation.estado }}
+                  </span>
+                </td>
+                @if (!showDevolucionReal() && reservation.estado === 'ACTIVA') {
+                  <td class="actions-cell">
+                    <button 
+                      class="btn-cancel" 
+                      (click)="onCancelReservation(reservation.id_reserva)"
+                    >
+                      Cancelar
+                    </button>
+                  </td>
+                }
+              </tr>
+            }
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>

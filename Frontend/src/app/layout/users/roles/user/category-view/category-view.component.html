@@ -1,0 +1,28 @@
+<div class="category-container">
+    <header class="category-header">
+      <div class="header-content">
+        <h1>{{ categoryName() }}</h1>
+        <div class="filters">
+          <button class="filter-btn">
+            <span class="material-icons">filter_list</span>
+            Filtrar
+          </button>
+          <button class="filter-btn">
+            <span class="material-icons">sort</span>
+            Ordenar
+          </button>
+        </div>
+      </div>
+    </header>
+  
+    <section class="books-grid">
+      @for (book of books(); track book.id) {
+        <app-book-card [book]="book"></app-book-card>
+      } @empty {
+        <div class="no-results">
+          <span class="material-icons">search_off</span>
+          <p>No se encontraron libros en esta categoría</p>
+        </div>
+      }
+    </section>
+  </div>

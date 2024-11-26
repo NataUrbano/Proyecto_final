@@ -1,0 +1,90 @@
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fff;
+  }
+  
+  .login-container {
+    background-color: #f3f4eb;
+    padding: 2.5rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .icon-container {
+    text-align: center;
+    margin-bottom: 2rem;
+  
+    .book-icon {
+      width: 60px;
+      height: 60px;
+      fill: #5c8a9d;
+    }
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #999;
+      font-size: 0.95rem;
+    }
+  
+    input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background-color: #fff;
+      box-sizing: border-box;
+      font-size: 1rem;
+  
+      &:focus {
+        outline: none;
+        border-color: #5c8a9d;
+      }
+    }
+  }
+  
+  button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #5c8a9d;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: darken(#5c8a9d, 10%);
+    }
+  
+    &:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+  }
+  
+  .register-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    
+    a {
+      color: #666;
+      text-decoration: none;
+      font-size: 0.9rem;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }

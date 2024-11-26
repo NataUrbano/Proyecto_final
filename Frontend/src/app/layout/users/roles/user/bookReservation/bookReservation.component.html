@@ -1,0 +1,62 @@
+<div class="reservation-container">
+    <div class="reservation-card">
+      <div class="book-preview">
+        <img src="assets/images/book-cover.jpg" alt="Portada del libro">
+      </div>
+      
+      <div class="reservation-form">
+        <h1>¡Reserva tu Libro en Epilogo!</h1>
+        <p class="subtitle">
+          Estás a un paso de asegurar tu próxima lectura. Completa los datos necesarios para finalizar tu reserva.
+        </p>
+  
+        <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label>Fecha de reserva:</label>
+            <select formControlName="reservationDate" class="form-control">
+              <option value="">Selecciona una opción</option>
+              @for (option of dateOptions(); track option.value) {
+                <option [value]="option.value">{{ option.label }}</option>
+              }
+            </select>
+          </div>
+  
+          <div class="form-group">
+            <label>Duración de la reserva:</label>
+            <select formControlName="duration" class="form-control">
+              <option value="">Selecciona una opción</option>
+              @for (option of durationOptions(); track option.value) {
+                <option [value]="option.value">{{ option.label }}</option>
+              }
+            </select>
+          </div>
+  
+          <div class="note">
+            <h3>Nota:</h3>
+            <p>
+              Recuerda llevar una identificación válida a la sede para recoger tu libro reservado. 
+              Asegúrate de presentarte en la fecha acordada para evitar que la reserva se cancele automáticamente.
+            </p>
+          </div>
+  
+          <div class="form-actions">
+            <button type="submit" class="btn-reserve" [disabled]="!reservationForm.valid">
+              Reservar libro
+            </button>
+            <button type="button" class="btn-cancel" (click)="onCancel()">
+              Cancelar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  @if (showConfirmDialog()) {
+    <app-confirm-dialog (confirm)="onConfirm($event)"></app-confirm-dialog>
+  }
+  
+  @if (showSuccessDialog()) {
+    <app-success-dialog (close)="onSuccessClose()"></app-success-dialog>
+  }
+  

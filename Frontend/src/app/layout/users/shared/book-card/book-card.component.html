@@ -1,0 +1,14 @@
+<article class="book-card">
+    <img [src]="book.imageUrl" [alt]="book.title" class="book-image">
+    <div class="book-info">
+      <h3 class="book-title">{{ book.title }}</h3>
+      <p class="book-author">{{ book.author }}</p>
+      <div class="availability" [ngClass]="getAvailabilityClass()">
+        {{ book.availability }}
+      </div>
+      <button class="details-button" (click)="onDetailsClick()">
+        Ver detalles
+      </button>
+    </div>
+  </article>
+  

@@ -1,0 +1,131 @@
+.book-detail {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+  }
+  
+  .book-container {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
+  }
+  
+  .book-image {
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  .book-info {
+    .book-title {
+      font-size: 2rem;
+      color: #1a1a3f;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+  
+    .book-author {
+      font-size: 1.25rem;
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+  
+    .book-genre {
+      margin-bottom: 1.5rem;
+      
+      .label {
+        color: #666;
+        margin-right: 0.5rem;
+      }
+  
+      .value {
+        color: #1a1a3f;
+      }
+    }
+  
+    .availability {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-weight: 500;
+      margin-bottom: 1rem;
+  
+      &.available {
+        background-color: #E8F5E9;
+        color: #2E7D32;
+      }
+  
+      &.few-copies {
+        background-color: #FDC975;
+        color: #B45309;
+      }
+  
+      &.no-copies {
+        background-color: #F04C4C;
+        color: white;
+      }
+    }
+  
+    .copies-info {
+      margin-bottom: 2rem;
+      color: #666;
+  
+      .copies {
+        font-weight: 500;
+        color: #1a1a3f;
+      }
+    }
+  
+    .reserve-button {
+      background-color: #5C8A9D;
+      color: white;
+      border: none;
+      padding: 0.75rem 2rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: darken(#5C8A9D, 10%);
+      }
+  
+      &:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+    }
+  }
+  
+  .book-description {
+    margin-top: 3rem;
+    color: #444;
+    line-height: 1.6;
+    max-width: 800px;
+  
+    p {
+      margin: 0;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .book-container {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  
+    .book-image {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+  
+    .book-info {
+      .book-title {
+        font-size: 1.75rem;
+      }
+    }
+  }

@@ -1,0 +1,42 @@
+<section class="book-detail">
+    <div class="book-container">
+      <!-- Imagen del libro -->
+      <div class="book-image">
+        <img [src]="book.coverImage" [alt]="book.title">
+      </div>
+  
+      <!-- Información del libro -->
+      <div class="book-info">
+        <h1 class="book-title">{{ book.title }}</h1>
+        <p class="book-author">{{ book.author }}</p>
+        
+        <div class="book-genre">
+          <span class="label">Genero:</span>
+          <span class="value">{{ book.genre }}</span>
+        </div>
+  
+        <!-- Estado de disponibilidad -->
+        <div class="availability" [ngClass]="getAvailabilityStatus().class">
+          {{ getAvailabilityStatus().text }}
+        </div>
+  
+        <div class="copies-info">
+          <span>numero de copias: </span>
+          <span class="copies">{{ book.copies }}</span>
+        </div>
+  
+        <!-- Botón de reserva -->
+        <button 
+          class="reserve-button" 
+          (click)="onReserve()"
+          [disabled]="book.copies === 0">
+          Reservar
+        </button>
+      </div>
+    </div>
+  
+    <!-- Descripción del libro -->
+    <div class="book-description">
+      <p>{{ book.description }}</p>
+    </div>
+  </section>

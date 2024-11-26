@@ -1,0 +1,34 @@
+.search-results {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    h2 {
+      color: #242464;
+      margin-bottom: 2rem;
+      font-size: 1.75rem;
+    }
+  }
+  
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .search-results {
+      padding: 1rem;
+    }
+    
+    .results-grid {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .results-grid {
+      grid-template-columns: 1fr;
+    }
+  }

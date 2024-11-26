@@ -1,0 +1,176 @@
+/* You can add global styles to this file, and also import other style files */
+$primary-color: #E0E0FF;
+$secondary-color: #242464;
+$text-color: #333333;
+$light-gray: #F7F7F7;
+$footer-bg: #8E96B9;
+$botonColor: #5555FF;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: $text-color;
+    background-color: $light-gray;
+  }
+  
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $primary-color;
+    padding: 1rem 2rem;
+    color: $secondary-color;
+  
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+  
+      .logo {
+        width: 40px;
+        height: 40px;
+      }
+  
+      .brand-name {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+    }
+  
+    .nav-link {
+      color: $secondary-color;
+      text-decoration: none;
+      font-weight: bold;
+  
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  
+  /* Main Content */
+  .main-content {
+    text-align: center;
+    padding: 2rem;
+  
+    .intro-section {
+      .main-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: $primary-color;
+      }
+  
+      .subtitle {
+        font-size: 1.8rem;
+        color: $text-color;
+        margin-top: 0.5rem;
+      }
+  
+      .description {
+        margin-top: 1rem;
+        font-size: 1rem;
+        color: $text-color;
+      }
+  
+      .buttons {
+        margin-top: 1.5rem;
+  
+        .primary-button {
+          background-color: $botonColor;
+          color: $secondary-color;
+          border: none;
+          padding: 0.8rem 1.5rem;
+          border-radius: 5px;
+          font-size: 1rem;
+          cursor: pointer;
+          margin-right: 1rem;
+  
+          &:hover {
+            background-color: darken($primary-color, 10%);
+          }
+        }
+  
+        .secondary-button {
+          background-color: $secondary-color;
+          color: $botonColor;
+          border: 2px solid $primary-color;
+          padding: 0.8rem 1.5rem;
+          border-radius: 5px;
+          font-size: 1rem;
+          cursor: pointer;
+  
+          &:hover {
+            background-color: lighten($primary-color, 40%);
+            color: $secondary-color;
+          }
+        }
+      }
+    }
+  
+    .image-section {
+      margin-top: 2rem;
+  
+      .book-image {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+    }
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: $footer-bg;
+    color: $secondary-color;
+    padding: 2rem;
+  
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+  
+      .footer-column {
+        flex: 1;
+  
+        h3 {
+          margin-bottom: 1rem;
+          font-size: 1.2rem;
+        }
+  
+        ul {
+          list-style: none;
+  
+          li {
+            margin-bottom: 0.5rem;
+  
+            a {
+              color: $secondary-color;
+              text-decoration: none;
+  
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+  
+        p {
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+  
+    .footer-bottom {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+  }
